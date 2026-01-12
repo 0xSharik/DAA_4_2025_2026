@@ -56,3 +56,5 @@ int main() {
 
 // TIME COMPLEXITY : n^log2 3 ( n to the power log 3 base 2 ) 
 // it is case 1 master theorem 
+// operation : 127 depth : 3
+// time taken (ms): 0
