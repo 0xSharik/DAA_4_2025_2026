@@ -5,21 +5,25 @@ using namespace std;
 
 int main() {
     vector<int> arr = {2,5,7,1,4,8,9,7};
-    int size = arr.size();
+    int n = arr.size();
+
+    vector<int> dp(n, 0);
     int result = INT_MIN;
 
-    for(int i = 0; i < size - 1; i++) {
-        int temp = 0; 
-        for(int j = i + 1; j < size; j++) {
-            if(arr[i] < arr[j]) {
-                temp++;
+  
+    for(int i = n - 2; i >= 0; i--) {
+        int count = 0;
+
+        for(int j = i + 1; j < n; j++) {
+            if(arr[j] > arr[i]) {
+                count++;
             }
         }
-        if(result < temp) result = temp;
+
+        dp[i] = count;
+        result = max(result, dp[i]);
     }
 
     cout << result;
     return 0;
 }
-
-//folder name: lab external
